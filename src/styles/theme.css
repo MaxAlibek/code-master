@@ -1,0 +1,192 @@
+:root {
+  color-scheme: light;
+  --bg-primary: #F5F5F7;
+  --surface: #FFFFFF;
+  --text-main: #1D1D1F;
+  --text-sub: #424245;
+  --app-bg: #F5F5F7;
+  --bg-primary: #F5F5F7;
+  --app-bg-soft: #FFFFFF;
+  --app-surface: rgba(255, 255, 255, 0.82);
+  --app-surface-strong: #FFFFFF;
+  --app-surface-muted: #FFFFFF;
+  --app-text: var(--text-main);
+  --bg: #F5F5F7;
+  --text-primary: #1D1D1F;
+  --text-secondary: #424245;
+  --app-text-muted: var(--text-sub);
+  --app-text-faint: rgba(66, 66, 69, 0.8);
+  --app-border: rgba(15, 23, 42, 0.08);
+  --app-border-strong: rgba(15, 23, 42, 0.14);
+  --app-primary: #007AFF;
+  --app-accent: #34C759;
+  --app-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+  --app-shadow-soft: 0 8px 20px rgba(0, 0, 0, 0.05);
+  --app-glow-blue: rgba(0, 122, 255, 0.14);
+  --app-glow-green: rgba(52, 199, 89, 0.12);
+  --app-code-bg: #101216;
+  --app-code-text: #F5F7FB;
+  --app-card-radius: 16px;
+  --assessment-option-text: #2F2F33;
+}
+
+:root[data-theme='dark'],
+:root.dark {
+  color-scheme: dark;
+  --bg-primary: #000000;
+  --surface: rgba(25, 25, 27, 0.8);
+  --text-main: #F5F5F7;
+  --text-sub: #A1A1A6;
+  --app-bg: #000000;
+  --bg-primary: #000000;
+  --app-bg-soft: #0F0F11;
+  --app-surface: var(--surface);
+  --app-surface-strong: var(--surface);
+  --app-surface-muted: rgba(25, 25, 27, 0.94);
+  --app-text: var(--text-main);
+  --text-primary: #F5F7FB;
+  --app-text-muted: var(--text-sub);
+  --app-text-faint: rgba(161, 161, 166, 0.75);
+  --app-border: rgba(255, 255, 255, 0.08);
+  --app-border-strong: rgba(255, 255, 255, 0.16);
+  --app-primary: #007AFF;
+  --app-accent: #49D17D;
+  --app-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+  --app-shadow-soft: 0 16px 38px rgba(0, 0, 0, 0.35);
+  --app-glow-blue: rgba(0, 122, 255, 0.2);
+  --app-glow-green: rgba(73, 209, 125, 0.16);
+  --app-code-bg: #11141B;
+  --app-code-text: #F5F7FB;
+  --assessment-option-text: #F5F5F7;
+}
+
+html {
+  background: var(--app-bg);
+}
+
+body {
+  background: var(--app-bg);
+  color: var(--app-text);
+  transition: background-color 0.28s ease, color 0.28s ease;
+}
+
+:root[data-theme='dark'] html,
+:root[data-theme='dark'] body,
+:root.dark html,
+:root.dark body {
+  background: #000000;
+}
+
+.theme-shell {
+  background:
+    radial-gradient(circle at 12% 8%, var(--app-glow-blue), transparent 32%),
+    radial-gradient(circle at 88% 18%, var(--app-glow-green), transparent 28%),
+    var(--app-bg);
+  color: var(--app-text);
+}
+
+.apple-glass {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: var(--app-shadow-soft);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+}
+
+:root[data-theme='light'] .apple-glass,
+:root:not([data-theme='dark']):not(.dark) .apple-glass {
+  border-radius: var(--app-card-radius);
+}
+
+:root[data-theme='dark'] .apple-glass,
+:root.dark .apple-glass {
+  background: rgba(15, 15, 17, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.theme-control {
+  min-height: 40px;
+  border-radius: 999px;
+  border: 1px solid var(--app-border);
+  background: var(--app-surface-muted);
+  color: var(--app-text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 12px;
+  font-size: 0.8125rem;
+  font-weight: 800;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+
+.theme-control:hover {
+  border-color: var(--app-border-strong);
+  box-shadow: 0 0 24px var(--app-glow-blue);
+}
+
+.primary-btn {
+  border-radius: 20px;
+  font-weight: 600;
+  background: #007AFF;
+  color: #FFFFFF;
+  transition: background-color 0.24s ease, transform 0.24s ease, box-shadow 0.24s ease;
+}
+
+.primary-btn:hover {
+  background: #0069D9;
+}
+
+.primary-btn:active {
+  transform: scale(0.99);
+}
+
+.premium-dark-glass {
+  background: var(--surface);
+}
+
+:root[data-theme='dark'] .premium-dark-glass,
+:root.dark .premium-dark-glass {
+  background: rgba(20, 20, 22, 0.8);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+@keyframes mainActionPulse {
+  0%, 100% { box-shadow: 0 10px 24px rgba(0, 122, 255, 0.24); }
+  50% { box-shadow: 0 12px 30px rgba(0, 122, 255, 0.38); }
+}
+
+.main-action-pulse {
+  animation: mainActionPulse 2.4s ease-in-out infinite;
+}
+
+/* Light mode card system: clean white containers with gentle depth */
+:root[data-theme='light'] :is(
+  .lesson-para,
+  .lesson-reader,
+  .lesson-task-panel,
+  .lesson-mentor,
+  .lesson-task-card,
+  .lesson-rating-card,
+  .lesson-mentor-context,
+  .lesson-empty-card,
+  .paths-hero,
+  .roadmap-node
+),
+:root:not([data-theme='dark']):not(.dark) :is(
+  .lesson-para,
+  .lesson-reader,
+  .lesson-task-panel,
+  .lesson-mentor,
+  .lesson-task-card,
+  .lesson-rating-card,
+  .lesson-mentor-context,
+  .lesson-empty-card,
+  .paths-hero,
+  .roadmap-node
+) {
+  border-radius: var(--app-card-radius);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
